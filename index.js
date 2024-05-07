@@ -9,13 +9,13 @@ function distanceFromHqInBlocks(street){
 
 function distanceFromHqInFeet(street) {
     return distanceFromHqInBlocks(street) * 264; 
-  }
+}
   
-  function distanceTravelledInFeet(start, destination) {
-    return Math.abs(distanceFromHqInFeet(start) - distanceFromHqInFeet(destination));
-  }
+function distanceTravelledInFeet(start, destination) {
+    return Math.abs(start - destination) * 264;
+}
 
-  function calculatesFarePrice(start, destination) {
+function calculatesFarePrice(start, destination) {
     const distanceInFeet = distanceTravelledInFeet(start, destination);
 
     if (distanceInFeet <= 400) {
@@ -27,4 +27,4 @@ function distanceFromHqInFeet(street) {
     } else if (distanceInFeet > 2500) {
         return "cannot travel that far";
     }
-  }
+}
